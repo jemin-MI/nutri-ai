@@ -70,7 +70,7 @@ export function NutritionForm({ formData, updateFormData, onComplete, onPrev }: 
   }
 
   return (
-    <Card>
+    <Card className="bg-[#EEEEEE] p-4 rounded-lg">
       <CardHeader>
         <CardTitle className="bg-gradient-to-b from-zinc-800 to-zinc-600 bg-clip-text text-transparent">Nutrition Preferences</CardTitle>
         <CardDescription>Tell us about your eating habits and dietary preferences</CardDescription>

@@ -160,7 +160,8 @@ export default function Profile() {
         </div>}
 
         {hasProfile && !isEditing ? (
-          <Card>
+          <Card className="bg-[#EEEEEE] p-4 rounded-lg">
+          
             <CardHeader className="text-zinc-800">
               <CardTitle>Your Fitness Profile</CardTitle>
               <CardDescription>Profile information used for your recommendations</CardDescription>
@@ -171,7 +172,7 @@ export default function Profile() {
                 <Button onClick={startEditProfile} className="bg-gradient-to-r from-zinc-800 to-zinc-600 p-3">Edit Profile</Button>
               </div>
             </CardContent>
-          </Card>
+          </Card>   
         ) : (
           <div className="space-y-8">
             {hasProfile && (
@@ -179,7 +180,7 @@ export default function Profile() {
                 <Button variant="outline" onClick={cancelEdit}>Cancel</Button>
               </div>
             )}
-            
+             {/* "bg-[#E6E0F2] text-black" : "bg-[#E6E0F2] text-gray-600" */}
             {!isComplete ? (
               <>
                 <div className="flex justify-between items-center">
