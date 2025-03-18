@@ -66,6 +66,11 @@ export default function AppBar() {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
+                    <Link href={"/report-analysys"} className="flex w-full">
+                      Report Analysys
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
                     <Link href={"/meal-plan"} className="flex w-full">
                       Saved Meal Plan
                     </Link>
