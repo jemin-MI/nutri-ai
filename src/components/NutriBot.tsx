@@ -80,7 +80,7 @@ export default function NutriBot({ hasMealData, userMetadata, hasProfile, userId
             needs and health goals.
           </p>
 
-          <div className="bg-zinc-100 p-4 rounded-lg mb-6">
+          <div className="bg-zinc-100 bg-[#ffe3ee] p-4 rounded-lg mb-6">
             <h3 className="font-medium text-zinc-800 mb-2">What NutriAI can do for you:</h3>
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
@@ -110,54 +110,55 @@ export default function NutriBot({ hasMealData, userMetadata, hasProfile, userId
         </div>
 
         <form className="mt-6 flex flex-col sm:flex-row justify-between pt-4 border-t gap-4" onSubmit={handleSubmit}>
-          <div className="w-full sm:w-auto">
-            <Select required onValueChange={(value) => setDuration(value)}>
-              <SelectTrigger className="w-full sm:w-[200px]">
-                <div className="flex items-center gap-2">
-                  <CalendarIcon className="h-4 w-4 text-neutral-600" />
-                  <SelectValue placeholder="Select Plan Duration" />
-                </div>
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="3">3 Days</SelectItem>
-                <SelectItem value="5">5 Days</SelectItem>
-                <SelectItem value="7">7 Days</SelectItem>
-              </SelectContent>
-            </Select>
-            {errors.duration && <p className="text-sm text-destructive mt-1">{errors.duration}</p>}
-          </div>
+        <div className="w-full sm:w-auto">
+          <Select required onValueChange={(value) => setDuration(value)}>
+            <SelectTrigger className="w-full sm:w-[200px] bg-[#D0BFFF] text-black border rounded-lg hover:text-black transition-colors">
+            <div className="flex items-center gap-2 text-black">
+              <CalendarIcon className="h-4 w-4 text-black" />
+              <SelectValue placeholder="Select Plan Duration" className="text-black" />
+            </div>
+            </SelectTrigger>
+
+            <SelectContent className="bg-white border text-black">
+              <SelectItem value="3" className="hover:bg-[#FFC0D9] hover:text-black">3 Days</SelectItem>
+              <SelectItem value="5" className="hover:bg-[#FFC0D9] hover:text-black">5 Days</SelectItem>
+              <SelectItem value="7" className="hover:bg-[#FFC0D9] hover:text-black">7 Days</SelectItem>
+            </SelectContent>
+          </Select>
+          {errors.duration && <p className="text-sm text-destructive mt-1">{errors.duration}</p>}
+        </div>
+
           
-          <div className="flex space-x-2">
+        <div className="flex space-x-2">
+          <Button 
+            type="submit"
+            disabled={!hasProfile || loading || hasMealData}
+            className="bg-[#ffc0d9] text-black hover:bg-[#ffacc9] transition-all">
+            {loading ? "Generating..." : hasMealData ? "Generated" : "Generate Plan"}
+          </Button>
+
+          {hasMealData && (
             <Button 
-              type="submit"
-              disabled={!hasProfile || loading || hasMealData}
-              className={hasProfile && !hasMealData
-                ? "bg-gradient-to-br hover:shadow-xl from-neutral-800 to-neutral-600 hover:bg-primary/90" 
-                : "bg-gradient-to-br hover:shadow-xl from-neutral-800 to-neutral-600 hover:bg-primary/90 opacity-50"
-              }
-            >
-              {loading ? "Generating..." : hasMealData ? "Generated" : "Generate Plan"}
+              type="button"
+              onClick={() => router.push('/meal-plan')} 
+              className="bg-[#ffc0d9] text-black hover:bg-[#ffacc9] transition-all">
+              View Your Plan
             </Button>
-            
-            {hasMealData && (
-              <Button 
-                type="button"
-                onClick={() => router.push('/meal-plan')} 
-                className="text-zinc-700 font-light border p-2 hover:bg-zinc-100 border-zinc-800 bg-zinc-50"
-              >
-                View Your Plan
-              </Button>
-            )}
-            {!hasProfile && (
-              <Button 
-                type="button"
-                onClick={() => router.push('/profile')} 
-                className="text-zinc-700 font-light border p-2 hover:bg-zinc-100 border-zinc-800 bg-zinc-50"
-              >
-                Complete Your Profile
-              </Button>
-            )}
-          </div>
+          )}
+
+          {!hasProfile && (
+            <Button 
+              type="button"
+              onClick={() => router.push('/profile')} 
+              className="text-black font-light border p-2  bg-[#ffc0d9] transition-all 
+                        hover:bg-[#ffddbb] hover:shadow-lg hover:scale-105">
+              Complete Your Profile
+            </Button>
+          )}
+        </div>
+
+
+
         </form>
       </div>
     </div>
