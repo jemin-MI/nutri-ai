@@ -80,11 +80,11 @@ export default function NutriBot({ hasMealData, userMetadata, hasProfile, userId
             needs and health goals.
           </p>
 
-          <div className="bg-zinc-100 bg-[#ffe3ee] p-4 rounded-lg mb-6">
+          <div className="bg-[#ffe3ee] p-4 rounded-lg mb-6">
             <h3 className="font-medium text-zinc-800 mb-2">What NutriAI can do for you:</h3>
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
-                <div className="h-5 w-5 rounded-full bg-green-200 flex items-center justify-center mt-0.5">
+                <div className="h-5 w-5 rounded-full bg-[#d0bfff] flex items-center justify-center mt-0.5">
                   <span className="text-zinc-700 text-xs">✓</span>
                 </div>
                 <span className="text-sm text-gray-700">
@@ -92,7 +92,7 @@ export default function NutriBot({ hasMealData, userMetadata, hasProfile, userId
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <div className="h-5 w-5 rounded-full bg-green-200 flex items-center justify-center mt-0.5">
+                <div className="h-5 w-5 rounded-full bg-[#d0bfff] flex items-center justify-center mt-0.5">
                   <span className="text-zinc-700 text-xs">✓</span>
                 </div>
                 <span className="text-sm text-gray-700">
@@ -100,7 +100,7 @@ export default function NutriBot({ hasMealData, userMetadata, hasProfile, userId
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <div className="h-5 w-5 rounded-full bg-green-200 flex items-center justify-center mt-0.5">
+                <div className="h-5 w-5 rounded-full bg-[#d0bfff] flex items-center justify-center mt-0.5">
                   <span className="text-zinc-700 text-xs">✓</span>
                 </div>
                 <span className="text-sm text-gray-700">Gives Exact Nutrition Value for the Meal</span>

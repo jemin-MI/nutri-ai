@@ -60,14 +60,15 @@ export function UserMetadataForm({ formData, updateFormData, onNext }: UserMetad
   }
 
   return (
-    <Card>
+    // className="bg-[#C4BBDD] p-4 rounded-lg"
+    <Card className="bg-[#EEEEEE] p-4 rounded-lg">
       <CardHeader>
         <CardTitle className="text-zinc-800">Personal Information</CardTitle>
         <CardDescription>Let&apos;s start with some basic information about you</CardDescription>
       </CardHeader>
       <form onSubmit={handleSubmit}>
         <CardContent className="space-y-4 text-zinc-800">
-          <div className="space-y-2">
+          <div className="space-y-2"> 
             <Label htmlFor="age">Age</Label>
             <Input
               id="age"

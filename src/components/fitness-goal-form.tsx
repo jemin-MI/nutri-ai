@@ -77,7 +77,7 @@ export function FitnessGoalsForm({ formData, updateFormData, onNext, onPrev }: F
   }
 
   return (
-    <Card>
+    <Card className="bg-[#EEEEEE] p-4 rounded-lg">
       <CardHeader>
         <CardTitle className="bg-gradient-to-b from-neutral-800 to-neutral-700 bg-clip-text text-transparent">Fitness Goals & Activities</CardTitle>
         <CardDescription>Tell us about your fitness goals and preferred activities</CardDescription>

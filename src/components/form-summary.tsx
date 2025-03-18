@@ -66,8 +66,8 @@ export function FormSummary({ formData }: FormSummaryProps) {
   }
 
   return (
-    <Card>
-      <CardHeader className="text-zinc-800">
+    <Card className="bg-[#EEEEEE] p-4 rounded-lg">
+      <CardHeader >
         <CardTitle >Your Fitness Profile</CardTitle>
         <CardDescription>Thank you for completing your profile! Here&apos;s a summary of your information.</CardDescription>
       </CardHeader>

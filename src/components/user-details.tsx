@@ -39,7 +39,7 @@ export default function UserMetadataCard(
   { userData }: UserMetadataCardProps
 ) {
   return (
-    <Card className="w-full max-w-3xl shadow-md">
+    <Card className="bg-[#EEEEEE] p-4 rounded-lg">
       <CardHeader className="bg-muted/50">
         <CardTitle className="flex items-center gap-2 text-xl">
           <User className="h-5 w-5" />
