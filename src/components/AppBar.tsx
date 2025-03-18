@@ -34,7 +34,7 @@ export default function AppBar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          {/* <div className="hidden md:flex md:items-center md:space-x-8">
             <Link href="/meal-plans" className="text-[#00000]  hover:text-[#7b2cbf] transition-colors">
               Meal Plans
             </Link>
@@ -47,7 +47,7 @@ export default function AppBar() {
             <Link href="/about" className="text-[#00000]  hover:text-[#7b2cbf] transition-colors">
               About
             </Link>
-          </div>
+          </div> */}
 
           {/* User Profile Dropdown */}
           {session?.user ? (
@@ -67,7 +67,7 @@ export default function AppBar() {
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <Link href={"/report-analysys"} className="flex w-full">
-                      Report Analysys
+                      Report Analysis
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>

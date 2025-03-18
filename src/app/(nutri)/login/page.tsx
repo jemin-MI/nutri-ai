@@ -31,10 +31,10 @@ const Login = () => {
 
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-zinc-400 to-zinc-300 flex  items-start justify-center  overflow-hidden">
+    <main className="min-h-screen bg-gradient-to-br from-zinc-200 to-zinc-100 flex  items-start justify-center  overflow-hidden">
         <FloatingText />
-        <div className="max-w-3xl bg-slate-100 w-full bg-opacity-90 rounded-lg shadow-xl p-6 md:p-8 backdrop-blur-sm z-10 mt-4">
-          <LoginForm />
+        <div className="absolute inset-0 flex items-center justify-center p-4">
+        <LoginForm />
         </div>
     </main>
     )
