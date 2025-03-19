@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Eye, FileText, Trash, Loader2 } from "lucide-react";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 export default function DocumentUploader() {
   const [files, setFiles] = useState<File[]>([]);
@@ -56,28 +57,81 @@ export default function DocumentUploader() {
 
               <div className="flex space-x-2">
                 {/* Preview Button with Eye Icon */}
-                <button
-                  onClick={() => window.open(URL.createObjectURL(file))}
-                  className="text-white bg-[#9d4edd] p-2 rounded-lg shadow hover:bg-[#7b2cbf] transition flex items-center justify-center"
-                >
-                  <Eye className="h-5 w-5" />
-                </button>
+                 {/* View Button */}
+                 <Tooltip.Provider delayDuration={200}>
+                  <Tooltip.Root>
+                    <Tooltip.Trigger asChild>
+                      <button
+                        onClick={() => window.open(URL.createObjectURL(file))}
+                        className="text-white bg-[#9d4edd] p-2 rounded-lg shadow hover:bg-[#7b2cbf] transition flex items-center justify-center"
+                      >
+                        <Eye className="h-5 w-5" />
+                      </button>
+                    </Tooltip.Trigger>
+                    <Tooltip.Portal>
+                      <Tooltip.Content
+                        className="bg-pink-300 text-gray-600 px-2 py-0.5 rounded-lg text-sm shadow-lg font-medium"
+                        side="top"
+                        align="center"
+                        sideOffset={5}   // ✅ Keeps tooltip away from the button
+                        collisionPadding={10}  // ✅ Prevents overlapping
+                      >
+                        View
+                        <Tooltip.Arrow className="fill-pink-500" />
+                      </Tooltip.Content>
+                    </Tooltip.Portal>
+                  </Tooltip.Root>
+                </Tooltip.Provider>
 
                 {/* Analyze Button with File Icon */}
-                <button
-                  onClick={() => handleProcessFile(file)}
-                  className="text-white bg-[#ff758f] p-2 rounded-lg shadow hover:bg-[#ff5c7c] transition flex items-center justify-center"
-                >
-                  <FileText className="h-5 w-5" />
-                </button>
+                  {/* Edit Button */}
+                  <Tooltip.Provider delayDuration={200}>
+                      <Tooltip.Root>
+                        <Tooltip.Trigger asChild>
+                          <button
+                            onClick={() => console.log("Edit File:", file.name)}
+                            className="text-white bg-[#ff758f] p-2 rounded-lg shadow hover:bg-[#ff5c7c] transition flex items-center justify-center"
+                          >
+                            <FileText className="h-5 w-5" />
+                          </button>
+                        </Tooltip.Trigger>
+                        <Tooltip.Content 
+                        className="bg-pink-300 text-gray-600 px-2 py-0.5 rounded-lg text-sm shadow-lg font-medium"
+                        side="top"
+                        align="center"
+                        sideOffset={5}   // ✅ Keeps tooltip away from the button
+                        collisionPadding={10}  // ✅ Prevents overlapping
+                        >
+                        Edit
+                        <Tooltip.Arrow className="fill-pink-500" />
+                        </Tooltip.Content>
+                      </Tooltip.Root>
+                    </Tooltip.Provider>
 
                 {/* Delete Button with Trash Icon */}
-                <button
-                  onClick={() => handleDeleteFile(index)}
-                  className="text-white bg-[#ff595e] p-2 rounded-lg shadow hover:bg-[#d93740] transition flex items-center justify-center"
-                >
-                  <Trash className="h-5 w-5" />
-                </button>
+                {/* Delete Button */}
+                <Tooltip.Provider delayDuration={200}>
+                      <Tooltip.Root>
+                        <Tooltip.Trigger asChild>
+                          <button
+                            onClick={() => removeFile(index)}
+                            className="text-white bg-[#ff595e] p-2 rounded-lg shadow hover:bg-[#d93740] transition flex items-center justify-center"
+                          >
+                            <Trash className="h-5 w-5" />
+                          </button>
+                        </Tooltip.Trigger>
+                        <Tooltip.Content 
+                         className="bg-pink-300 text-gray-600 px-2 py-0.5 rounded-lg text-sm shadow-lg font-medium"
+                         side="top"
+                         align="center"
+                         sideOffset={5}   // ✅ Keeps tooltip away from the button
+                         collisionPadding={10}  // ✅ Prevents overlapping
+                         >
+                          Delete
+                          <Tooltip.Arrow className="fill-pink-500" />
+                        </Tooltip.Content>
+                      </Tooltip.Root>
+                    </Tooltip.Provider>
               </div>
 
             </li>
